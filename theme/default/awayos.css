@@ -1,0 +1,95 @@
+body {
+	margin: 0px;
+}
+
+.AwayOS {
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+.AWindowBorder {	
+	position: absolute;
+	border: 1px solid #BFBFBF;
+}
+
+.AWindow {	
+	background-color: white;
+	width: 100%;
+	height: 100%;
+}
+
+.AWindowTitleBar {
+	height: 20px;
+	width: 100%;
+	background: transparent url("panel_title.png");
+	background-repeat: repeat;
+	font-weight: bold;
+	cursor: default;
+}
+
+.AWindowTitle {
+	height: 18px;
+	margin: 2px;
+	line-height: 18px;
+	float: left;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.AWindowContent {
+	width: 100%;
+	cursor: default;
+}
+
+.AWindowCloseButton {
+	position: absolute;
+	right: 3px;
+	top: 2px;
+	width: 16px;
+	height: 16px;
+	background: url("panel_tools.gif") 16px 0;
+	cursor: pointer;
+}
+
+.AWindowMinimizeButton {
+	position: absolute;
+	right: 37px;
+	top: 2px;
+	width: 16px;
+	height: 16px;
+	background: url("panel_tools.gif") 0 0;
+	cursor: pointer;
+}
+
+.AWindowMaximizeButton {
+	position: absolute;
+	right: 20px;
+	top: 2px;
+	width: 16px;
+	height: 16px;
+	background: url("panel_tools.gif") 0 16px;
+	cursor: pointer;
+}
+
+.AWindowRestoreButton {
+	position: absolute;
+	right: 20px;
+	top: 2px;
+	width: 16px;
+	height: 16px;
+	background: url("panel_tools.gif") 0 16px;
+	cursor: pointer;
+}
+
+.WindowContent {
+	width: 100%;
+	height: 100%;
+}
+
+#desktop {
+	width: 800px;
+	height: 600px;
+	position: absolute;
+}

@@ -1,0 +1,38 @@
+.AWindow {
+	position: absolute;
+	border: 1px solid #BFBFBF;
+}
+
+.AWindowTitleBar {
+	height: 20px;
+	width: 100%;
+	background: transparent url("panel_title.png");
+	background-repeat: repeat;
+}
+
+.AWindowTitle {
+	height: 18px;
+	margin: 2px;
+	line-height: 18px;
+	float: left;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.AWindowTitleButton {
+	margin: 2px;
+	height: 20px;
+	line-height: 20px;
+	float: right;
+}
+
+.WindowContent {
+	width: 100%;
+	height: 100%;
+}
+
+.desktop {
+	width: 800px;
+	height: 600px;
+	position: absolute;
+}
