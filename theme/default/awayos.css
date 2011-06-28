@@ -1,5 +1,6 @@
 body {
 	margin: 0px;
+	overflow: hidden;
 }
 
 .AwayOS {
@@ -9,12 +10,96 @@ body {
 	padding: 0px;
 }
 
-.AWindowBorder {	
+.AwayDesktopBackground {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	display: block;
+	background-image: url("images/cloud.jpg");
+	background-repeat: repeat;
+	background-position: center center;
+	z-index: -2;
+}
+
+.AwayDesktop {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	z-index: -1;
+}
+
+/* Don't Change it */
+.AwayDrag {
+	width:100%;
+	height:100%;
+	position:absolute;
+	left:0px;
+	top:0px;
+	z-index:2147483580;
+	display:none;
+	background-color: #000000;
+	opacity: 0.0;
+	filter: alpha(opacity=0);
+}
+
+.AwayTaskBar {
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	height: 30px;
+	z-index: 2147483584;
+	display: block;
+	opacity: 0.8;
+	filter: alpha(opacity=80);
+}
+
+.AwayTaskBarBg {
+	position: absolute;
+	width: 100%;
+	height: 30px;
+	z-index: -1;
+	background-color: #aaaaaa;
+}
+
+.AwayTaskPanels {
+	position: absolute;
+	height: 30px;
+	z-index: 10;
+	left: 100px;
+}
+
+.AwayTaskPanel {
+	float: left;
+	text-align:center;
+	height: 30px;
+	opacity: 0.8;
+	line-height: 30px;
+	padding: 1px;
+	border: 1px;
+	border-style: solid;
+	border-color: #000000;
+	word-break: keep-all;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.AwayStartButton {
+	position: absolute;
+	width: 100px;
+	left: 0;
+	height: 30px;
+	background: bisque;
+}
+
+.AWindowBorder {
 	position: absolute;
 	border: 1px solid #BFBFBF;
 }
 
-.AWindow {	
+.AWindow {
 	background-color: white;
 	width: 100%;
 	height: 100%;
@@ -27,20 +112,37 @@ body {
 	background-repeat: repeat;
 	font-weight: bold;
 	cursor: default;
+	position: relative;
 }
 
 .AWindowTitle {
 	height: 18px;
 	margin: 2px;
 	line-height: 18px;
-	float: left;
 	font-size: 15px;
 	font-weight: bold;
+	position: absolute;
+	left: 2px;
+	word-break: keep-all;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .AWindowContent {
 	width: 100%;
 	cursor: default;
+	position: relative;
+}
+
+.AWindowContentBlot {
+	width: 100%;
+	position: absolute;
+	cursor: default;
+	left: 0px;
+	background-color: #000000;
+	opacity: 0.0;
+	filter: alpha(opacity=0);
 }
 
 .AWindowCloseButton {
@@ -79,17 +181,17 @@ body {
 	top: 2px;
 	width: 16px;
 	height: 16px;
-	background: url("panel_tools.gif") 0 16px;
+	background: url("panel_tools.gif") 16px 16px;
 	cursor: pointer;
 }
 
-.WindowContent {
-	width: 100%;
-	height: 100%;
-}
-
-#desktop {
-	width: 800px;
-	height: 600px;
+.AWindowCanResize {
 	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	width: 10px;
+	height: 10px;
+	cursor: se-resize;
+	background-color: #BFBFBF;
+	opacity: 0.2;
 }

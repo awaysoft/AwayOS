@@ -3,21 +3,59 @@
 		<title>测试</title>
 		<script type="text/javascript" src="js/awayos.js"></script>
 		<link href="theme/default/awayos.css" rel="stylesheet" type="text/css" />
+		<meta charset="UTF-8" />
 	</head>
 	<body>
 		<script type="text/javascript" >
-			var awayos = new AwayOS();
-			awayos.getNewWindow({left:300}).show();
-			awayos.getNewWindow({left:350}).show();
-			awayos.getNewWindow({left:350,top:200,level:2}).show();
-			awayos.getNewWindow({left:250,top:20,width:300,level:4}).show();
-			
-			var a = awayos.getNewWindow({left:100,level:5});
+			new away.os();
+			/* this is a application */
+			function createAPP(options){
+				if (options.register) return "myapp";
+				options.sid = 'myapp';
+				var myapp = new away.application(options);
+				myapp.win1 = myapp.getNewWindow({left:100,top:200,resize:false,title:'第一个asdfasfasfdasdsfassd应用',maximizebutton:false});
+				myapp.win2 = myapp.getNewWindow({left:550,title:'百度',blotunforce:true,url:"http://www.baidu.com",showontaskbar:false});
+				myapp.win3 = myapp.getNewWindow({left:650,top:150,title:'QQ',blotunforce:true,scrollbar:false,url:"http://im.qq.com",closebutton:false});
+
+
+				var win1dom = myapp.win1.getContentDOM();
+				win1dom.innerHTML = '这是我的第一个应用！';
+				var button = document.createElement('input');
+				button.setAttribute("type", "button");
+				button.setAttribute("value", "Click Me!");
+				button.onclick = function(){
+					if (myapp.win2.showing()){
+						myapp.win2.hide();
+					}else{
+						myapp.win2.show();
+					}
+				}
+				win1dom.appendChild(button);
+
+				myapp.onrun = function(){
+					myapp.win1.show();
+					myapp.win2.show();
+					myapp.win3.show();
+				}
+
+				return myapp;
+			}
+			away.system = away._os;
+			away.system.registerApplication(createAPP);
+
+			away.system.createProcess({sid:'myapp',process:away.system,params:{}});
+			/*
+			c.getNewWindow({left:300}).show();
+			c.getNewWindow({left:350}).show();
+			c.getNewWindow({left:350,top:200,level:2}).show();
+			c.getNewWindow({left:250,top:20,width:300,level:4}).show();
+
+			var a = c.getNewWindow({left:100,level:5});
 			a.onclose = function(){
 				alert('a'+a._id);
 				return true;
 			}
-			a.show();
+			a.show();*/
 		</script>
 	</body>
 </html>
